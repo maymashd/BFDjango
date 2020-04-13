@@ -14,10 +14,13 @@ class GroupListView(mixins.ListModelMixin,
                     viewsets.GenericViewSet,
                     mixins.UpdateModelMixin,
                     mixins.DestroyModelMixin):
+    def filter_queryset(self, queryset):
+        return TaskList.objects.for_user(self.request.user)
 
     permission_classes = [IsAuthenticated, ]
     queryset = TaskList.objects.all()
     serializer_class = ListSerializer2
+
 
     @action(methods=['GET'],detail=False)
     def reverse(self,request):

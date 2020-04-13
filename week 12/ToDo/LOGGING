@@ -1,0 +1,7 @@
+INFO -- 2020-04-05 16:45:22,141: New group is created For my own benefit
+INFO -- 2020-04-05 17:04:39,795: New task is created :
+INFO -- 2020-04-05 17:06:20,688: New task is created : {'name': 'to read Impossible does not exist', 'task_list_id': 14, 'due_on': '2020-05-05T16:57:05.433053Z'}
+INFO -- 2020-04-05 17:08:11,251: New task is created : to read Impossible does not exist
+INFO -- 2020-04-05 17:13:03,777: New task is created : to read book
+ERROR -- 2020-04-05 17:13:03,781: Validation error in TaskSerializer
+INFO -- 2020-04-12 15:58:28,737: New user is created :user7

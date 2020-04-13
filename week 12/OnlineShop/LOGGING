@@ -1,0 +1,4 @@
+INFO -- 2020-04-12 16:22:57,007: New user has been created:{'username': 'user5', 'email': 'user5@mail.ru', 'birth_date': None, 'password': 'user12345', 'first_name': 'Username', 'last_name': 'SecondName'}
+INFO -- 2020-04-12 16:24:01,166: New user has been created:{'id': 6, 'username': 'user5', 'email': '', 'mobile': '', 'location': '', 'birth_date': '1999-07-04', 'password': 'pbkdf2_sha256$100000$mSi85K7gtVdt$2p00juuMF+zkwJShhcKT4LT5zUKukxJuQXNmhr+y0zA=', 'first_name': 'Username', 'last_name': 'SecondName'}
+INFO -- 2020-04-12 16:25:21,202: User has been deleted. Fullname: None
+INFO -- 2020-04-12 16:26:19,977: User has been deleted. Fullname: None
