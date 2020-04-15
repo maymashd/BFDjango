@@ -11,7 +11,7 @@ class MyUserShortSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = MyUser
-        fields = ('id', 'username', 'email',)
+        fields = ('id', 'username', 'email','photo',)
 
 class MyUserSerializer(MyUserShortSerializer):
 
@@ -25,7 +25,8 @@ class MyUserSerializer(MyUserShortSerializer):
                                           last_name=validated_data.get('last_name', ''),
                                           birth_date=validated_data.get('birth_date', "1999-07-04"),
                                           mobile=validated_data.get('mobile',""),
-                                          location=validated_data.get('location',""))
+                                          location=validated_data.get('location',""),
+                                          photo=validated_data.get('photo'))
         user.set_password(validated_data['password'])
         user.save()
         return user
@@ -60,7 +61,7 @@ class MyProductSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Category
-        fields = ('id', 'name', 'created_at','category_id',)
+        fields = ('id', 'name', 'created_at', 'category_id',)
 
 class OrderSerializer(serializers.ModelSerializer):
     id=serializers.IntegerField(read_only=True)

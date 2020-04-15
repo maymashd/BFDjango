@@ -9,6 +9,8 @@ class MyUser(AbstractUser):
     mobile=models.CharField(max_length=20,blank=True)
     location=models.CharField(max_length=50,blank=True)
     birth_date=models.DateField(null=True,blank=True)
+    photo = models.ImageField(default='https://f0.pngfuel.com/png/184/113/portrait-icon-user-profile-computer-icons-profile-png-clip-art.png',
+                              upload_to='user_photos/', blank=True, null=True)
 
 
 
@@ -31,7 +33,8 @@ class Product(models.Model):
     created_at = models.DateTimeField(default=datetime.now)
     status = models.CharField(max_length=50,default="Available")
     category = models.ForeignKey(Category, on_delete=models.CASCADE,related_name="products")
-
+    photo=models.ImageField(default='https://webstore.iea.org/content/images/thumbs/default-image_450.png',
+                            upload_to='user_photos/',blank=True, null=True)
     def __str__(self):
         return 'name :{}, category: {}'.format(self.name,self.category)
 
