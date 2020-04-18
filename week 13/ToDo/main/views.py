@@ -95,4 +95,3 @@ class TaskDetail(mixins.RetrieveModelMixin,
         logger.info(f'The task was updated name : {name}')
         return self.update(request, *args, **kwargs)
 
-

@@ -1,4 +1,4 @@
-from user.models import MyUser
+from user.models import MyUser, MyUserProfile
 from rest_framework import serializers
 
 class MyUserShortSerializer(serializers.ModelSerializer):
@@ -12,15 +12,12 @@ class MyUserSerializer(MyUserShortSerializer):
 
     class Meta:
         model = MyUser
-        fields = MyUserShortSerializer.Meta.fields + ('mobile','location','birth_date','password','first_name','last_name',)
+        fields = MyUserShortSerializer.Meta.fields + ('password','first_name','last_name',)
 
     def create(self, validated_data):
         user = MyUser.objects.create_user(username=validated_data['username'],
                                           first_name=validated_data.get('first_name', ''),
                                           last_name=validated_data.get('last_name', ''),
-                                          birth_date=validated_data.get('birth_date', "1999-07-04"),
-                                          mobile=validated_data.get('mobile',""),
-                                          location=validated_data.get('location',""),
                                           logo=validated_data.get('logo')
                                           )
         user.set_password(validated_data['password'])
@@ -39,3 +36,10 @@ class MyUserSerializer(MyUserShortSerializer):
             if lname[0] < 'A' or lname[0] > 'Z':
                 raise serializers.ValidationError('The lastname of user can not start with Lower Case!!!')
         return val
+
+# class ProfileSerializer(serializers.ModelSerializer):
+#
+#     user=serializers.CurrentUserDefault()
+#     class Meta:
+#         model = MyUserProfile
+#         fields = MyUserShortSerializer.Meta.fields + ('user', 'mobile', 'location','birth_date',)

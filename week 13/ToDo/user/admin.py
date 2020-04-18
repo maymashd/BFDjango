@@ -2,7 +2,7 @@ from django.contrib import admin
 
 from django.contrib.auth.admin import UserAdmin
 
-from user.models import MyUser
+from user.models import MyUser, MyUserProfile
 
 
 @admin.register(MyUser)
@@ -11,3 +11,5 @@ class MyUserAdmin(UserAdmin):
     fieldsets = (
         (None, {'fields': ('username', 'password')}),
     )
+
+admin.site.register(MyUserProfile)

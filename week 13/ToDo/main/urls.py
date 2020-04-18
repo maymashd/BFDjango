@@ -15,6 +15,7 @@ urlpatterns = [
     # path('task_list/<int:pk>/', GroupListDetail.as_view()),
     path('task_list/<int:pk>/tasks/',Tasks.as_view()),
     path('task_list/<int:pk2>/tasks/<int:pk>/',TaskDetail.as_view()),
+
 ]
 
 urlpatterns =urlpatterns + router.urls
